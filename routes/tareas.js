@@ -32,5 +32,19 @@ router.get('/new', function(req, res, next) {
   res.render('new', { title: 'appJorge'});
 });
 
+router.post('/crear' ,function(req, res, next) {
+  var nom = req.body.nombre;
+  var etiquitas = req.body.etiquetas;
+  var realizacion = req.body.realizacion;
+
+  eti = eti.split(",");
+  var add = {
+  	 "nom": nom,
+  	 "etiquetes": etiquetas,
+  	 "realització": realizacion
+  }
+  tareas.push(add);
+  res.redirect('/tareas');
+});
 
 module.exports = router;
